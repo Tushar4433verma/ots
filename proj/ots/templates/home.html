@@ -1,0 +1,137 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+        body{
+        background-image: url("/static/bg3.jpg");
+       min-height: 100vh;     
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+    }
+    #header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0px ;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background-color: aliceblue;
+    box-shadow: 0 5px 15 px regba(0,0,0,0.6);
+    /*to make navbar sticky*/
+    z-index: 999;
+    position: sticky;
+    top:0;
+    left:0;
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar li {
+    text-decoration: none;
+    list-style: none;
+    padding: 0 100px;
+    
+}
+#navbar li a{
+    display: flex;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: #f64C72;
+    transition: 0.3s ease;
+    font-size: 25px;
+}
+#navbar li a:hover{
+    color: darkblue;
+}
+.logo{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 30px;
+    color: green;
+    
+}
+.bu{
+    padding: 10px;
+    padding-bottom: 30px;
+}
+.button-link{
+    text-align: center;
+    margin-left: 0 auto;
+    padding-bottom: 40px;
+}
+#head{
+    text-align: center;
+    padding: 50px;
+    font-size: 40px;
+}
+.test,.t{
+    text-decoration: none;
+    font-size: 30px;
+    color: green;
+    font-weight: bold;
+    font-style: italic;
+    text-decoration: underline;
+}
+span{
+    color: #f64C72;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<body>
+    <section id="header">
+        <p class="logo">OnLine <br>Ex@min@tion<br> SysTem</p>
+        <div id="search-bar">
+        </ul>
+    </div>
+        <ul id="navbar">
+            <li><a href="{%url 'ots:welcome' %}">Home</a>
+            <li><a href="{%url 'ots:registrationForm' %}">Signup</a>
+            <li><a href="{%url 'ots:logout' %}">Logout</a>
+            </ul>
+    </section>
+
+        </div>
+    </div>
+    <div class="content">
+    </div>
+
+</body>
+</html>
+<h1 id="head">Welcome <span>{{request.session.name}},</span> to your homepage</h1>
+<div class="bu">
+<div class="button-link">
+    <a href="{%url 'ots:testpaper' %}?n=5" class="test">Test of 5 questions</a>
+</div>
+<div class="button-link">
+    <a href="{%url 'ots:testpaper' %}?n=6 " class="test">Test of 6 questions</a>
+</div>
+<div class="button-link">
+    <a href="{%url 'ots:testpaper' %}?n=3" class="test">Test of 3 questions</a>
+</div>
+<div class="button-link">
+    <a href="{%url 'ots:testpaper' %}?n=7" class="test">Test of 7 questions</a>
+</div>
+<div class="button-link">
+    <a href="{%url 'ots:testpaper' %}?n=4" class="test">Test of 4 questions</a>
+</div>
+
+<div class="button-link">
+    <a href="{% url 'ots:testHistory' %}" class="t">Test History</a>
+</div>
+</div>

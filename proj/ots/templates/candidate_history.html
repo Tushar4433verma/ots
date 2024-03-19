@@ -1,0 +1,155 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+    #header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0px ;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background-color: aliceblue;
+    box-shadow: 0 5px 15 px regba(0,0,0,0.6);
+    /*to make navbar sticky*/
+    z-index: 999;
+    position: sticky;
+    top:0;
+    left:0;
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar li {
+    text-decoration: none;
+    list-style: none;
+    padding: 0 100px;
+    
+}
+#navbar li a{
+    display: flex;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    font-size: 25PX;
+    color: #f64C72;
+    transition: 0.3s ease;
+}
+#navbar li a:hover{
+    color: darkblue;
+}
+.logo{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 30px;
+    color: green
+}
+        body{
+        background-image: url("/static/bg3.jpg");
+       min-height: 100vh;     
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+    }
+    .options{
+        font-size: 20px;
+        margin: 25px;
+        margin-left: 35px;
+    }
+    .question{
+        margin: 20px;
+        font-size: 25px;
+        font-weight: bold;
+    }
+    table{
+        width: 90%;
+        margin: 0 auto;   
+        margin-top: 50px; 
+        margin-bottom: 50px;
+    }
+    table tr:nth-child(odd){
+        background-color: green;
+        color: white;
+        height: 30px;
+    }
+    table tr:nth-child(even){
+        background-color: lightgreen;
+        height: 30px;
+    }
+    table tr:first-child{
+        background-color: #f64C72;
+    }
+    table td{
+        text-align: center;
+        padding: 10px;
+    }
+    table th{
+      padding:8px ;
+    }
+    span{
+        color: #f64C72;
+        font-weight: bold ;
+    }
+    h1{
+        text-align: center;
+        color: green;
+        font-size: 50px;
+        margin-top: 60px;
+        text-decoration: underline;
+    }
+    p{
+        text-align: center;
+        font-size: 25px;
+        margin-top: 20px;
+    }
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ots Test paper</title>
+</head>
+<body>
+    <section id="header">
+        <p class="logo">OnLine <br>Ex@min@tion<br> SysTem</p>
+        <div id="search-bar">
+        </ul>
+    </div>
+        <ul id="navbar">
+            <li><a href="{%url 'ots:welcome' %}">Home</a>
+            <li><a href="{%url 'ots:registrationForm' %}">Signup</a>
+            <li><a href="{%url 'ots:logout' %}">Logout</a>
+            </ul>
+        </section>
+<h1>Your Report Card</h1>
+<p>Hi <span>{{candidate.name}}</span>, you have attempted in total <span>{{candidate.test_attempted}} </span>and you have scored <span>{{candidate.points}}</span> on the scale of 10
+</p>
+<table>
+    <tr>
+        <th>Date</th>
+        <th>Time</th>
+        <th>Attempt</th>
+        <th>Right</th>
+        <th>Wrong</th>
+        <th>Points</th>
+    </tr>
+    {%for r in results%}
+            <tr>
+                <td>{{r.date}}</td>
+                <td>{{r.time}}</td>
+                <td>{{r.attempt}}</td>
+                <td>{{r.right}}</td>
+                <td>{{r.wrong}}</td>
+                <td>{{r.points}}</td>
+            </tr> 
+            {%endfor%}
+</table>

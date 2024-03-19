@@ -1,0 +1,190 @@
+{%include "./master.html" %}
+{%load static%}
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" />
+<script src="https://kit.fontawesome.com/6d07541292.js" crossorigin="anonymous"></script>
+<style>
+   .img{
+    height:600px;
+    width: 100%;
+   } 
+   .febox img{
+    height: 150px;
+    width: 100%;
+    margin-bottom: 0px;
+    display: flex;
+}
+#feature{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    
+}
+.febox{
+    width: 300px;
+    text-align: center;
+    padding: 25px;
+    margin:20px;
+    box-shadow: 20px 20px 34px rgba(0,0,0,0.03);
+    border: 1px solid #cce7d0;
+    border-radius: 4px;
+    background-color:aliceblue;
+}
+#feature .febox h6{
+    margin-top: 20px;
+    padding: 9px 8px 6px 8px;
+    line-height: 1;
+    border-radius: 4px;
+    color: darkblue;
+    background-color: lightblue;
+    padding-top: 10px;
+    display: inline-block;
+}
+.section-p1{
+    margin-top: 50px;
+}
+.btm
+{
+    height: 500px;
+    width: 700px;
+    padding-bottom: 20px;
+}h2{
+    text-align: center;
+    font-size: 50px;
+    padding: 40px;
+}
+#bt{
+    display: flex;
+    text-align: center;
+    justify-content: center;
+}
+.para{
+  padding-top: 80px;
+    font-size: 20px;
+    line-height: 30px;
+  
+}
+.contactus{
+ height: 600px;
+ width: 900px; 
+ background-color: aliceblue; 
+padding: 100px;
+margin-left: 100px;
+
+ 
+}
+.contact input{
+  display: block;
+  width: 100%;
+  height: 30px;
+ margin-top: 10px;
+ margin-bottom: 10px;
+}
+textarea{
+    width: 100%;
+  
+ margin-top: 10px;
+ margin-bottom: 10px;   
+}
+.contain{
+    display: flex;
+    justify-self: center;
+  
+}
+h5{
+    font-size: 30px;
+    margin-bottom: 10px;
+}
+h4{
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+.email{
+    background-color: aliceblue;
+margin-left: 150px;
+    padding: 40px;
+    height:250px
+}
+.log{
+    color: darkblue;
+    padding: 5px;
+    font-size: 25px;
+}
+.log:hover{
+    color: green;
+}
+.butn{
+    padding: 20px;
+padding-bottom: 30px;
+    background-color: darkblue;
+    color: aliceblue;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 2px;
+    border: none;
+    outline: none;
+}
+.butn:hover{
+    background-color: lightblue;
+    color: darkblue;
+}
+</style>
+{%block title%}{%endblock title%}
+{%block top%}
+<img src="{% static 'online exam banner image2.png' %} " class="img">
+<section id="feature" class="section-p1">
+    <div class="febox">
+    <img src="{% static 'f1.jpg' %}" class="feimg">
+    <h6>Immediate Grades</h6>
+    </div>
+    <div class="febox">
+    <img src="{% static 'f2.jfif' %}" class="feimg">
+    <h6>Save Time</h6>
+    </div>
+    <div class="febox">
+    <img src="{% static 'f3.jpg' %}" class="feimg">
+    <h6>24/7 Support</h6>
+    </div>
+    <div class="febox">
+        <img src="{% static 'f4.jpg' %}" class="feimg">
+        <h6>Save Money</h6>
+        </div>
+    </section>
+    <h2>About Us</h2>
+    <section id="bt">
+       
+        <div class="bottom">
+            <img src="{% static 'examination2.png'%}" class="btm">
+        </div>
+       <div class="about">
+        <p class="para">Online Examination System is a technology-driven way to simplify examination activities like defining exam patterns with question banks, defining exam timers, objective/ subjective question sections, and conducting exams using a computer or mobile devices in a paperless manner.
+            Online Examination System is a cost-effective, scalable way to convert traditional pen and paper-based exams to online and paperless mode. Candidates can appear for the exam using any desktop, laptop, or mobile device with a browser. Exam results can be generated instantly for the objective type of questions.
+            It can simplify overall examination management and result in generation activity.</p>
+       </div>
+    </section>
+{%endblock%}
+{%block content%}
+<div class="contain">
+<div class="contactus" id="contactus">
+    <div class="title">
+        <h5>Get In Touch</h5>
+    </div>
+    <form method="post" class="contact">
+        <h4>Send us a Message</h4>
+        Full name<input type="text" placeholder="John">
+        Email<input type="email" placeholder="Ex. johndoe@gmail.com">
+        Mobile<input type="number" placeholder="+91 987 654 3210">
+        Message<textarea cols="40" rows="5" placeholder="Write Ypur text here"></textarea>
+        <input type="submit" value="Send" class="butn">
+    </form>
+    </div>
+    <div class="email">
+   <b> Contact us</b><br><br>
+<b>Phone no:</b> +91-897-768-908<br><br>
+<b>Email: </b>gupta.swati1200@gmail.com<br><br>
+    <i class="fa-brands fa-linkedin-in log"></i>
+    <i class="fa-brands fa-square-instagram  log"></i>
+    <i class="fa-brands fa-twitter log"></i></div></div>
+{%endblock%}
+

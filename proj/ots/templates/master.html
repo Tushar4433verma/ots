@@ -1,0 +1,83 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <style>
+        *{
+            margin: 0;
+            box-sizing: border-box;
+        }
+    #header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 0px ;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    background-color: aliceblue;
+    box-shadow: 0 5px 15 px regba(0,0,0,0.6);
+    /*to make navbar sticky*/
+    z-index: 999;
+    position: sticky;
+    top:0;
+    left:0;
+}
+#navbar{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+#navbar li {
+    text-decoration: none;
+    list-style: none;
+    padding: 0 35px;
+    
+}
+#navbar li a{
+    display: flex;
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 600;
+    color: #f64C72;
+    transition: 0.3s ease;
+}
+#navbar li a:hover{
+    color: darkblue;
+}
+.logo{
+   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: bold;
+    font-size: 20px;
+    margin-left: 30px;
+    color: green;
+}
+    </style>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{%block title%} {%endblock%}</title>
+</head>
+<body>
+    {%block top%}
+    <section id="header">
+        <p class="logo">OnLine <br>Ex@min@tion<br> SysTem</p>
+        <div id="search-bar">
+        </ul>
+    </div>
+        <ul id="navbar">
+            <li><a href="{%url 'ots:welcome' %}">Home</a>
+            <li><a href="{%url 'ots:registrationForm' %}">SignUp</a>
+            <li><a href="{%url 'ots:login' %}">Login</a>
+               
+            </ul>
+    </section>
+{%endblock%}
+        </div>
+    </div>
+    <div class="content">
+        {%block content%}
+        {%endblock%}
+    </div>
+
+</body>
+</html>

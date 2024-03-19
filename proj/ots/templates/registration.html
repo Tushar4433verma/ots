@@ -1,0 +1,70 @@
+
+{%include 'master.html'%}
+{%block title%}{%endblock title%}
+<style>
+    body{
+        background-image: url("/static/bg3.jpg");
+       min-height: 100vh;     
+
+/* Center and scale the image nicely */
+background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+    }
+    .userstatus{
+        padding: 150px;
+    }
+   .p{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+   }
+   .a{
+    margin-top: 30px;
+    margin-left: 560px;
+    text-align: center;
+    text-decoration: none;
+    padding: 15px;
+    padding-left: 30px;
+    padding-right: 30px;
+    background-color: black;
+    font-weight: bold;
+    color: white;
+    border: 2px solid black;
+   }
+   .a:hover{
+    background-color: white;
+    color: black;
+   }
+</style>
+{%block top%}
+
+{% if userStatus == 1%}
+    <div class="userstatus">
+        <p class="p">Sorry username already <br>exist,please try diffferent <br>username</p>
+        <a href="{%url 'ots:registrationForm' %}" class="a">SignUp</a>
+    </div>
+{% elif userStatus == 2 %}
+<div class="userstatus">
+   <p class="p"> Congratulations!!,<br>User created<br> succesfully</p>
+    <a href="{%url 'ots:login' %}" class="a">Login</a>
+</div>
+{%elif userStatus == 3%}
+<div class="userstatus">
+    <p class="p">OOPS!!,><br>Improper request</p>
+   <p class="p"> <a href="{%url 'ots:registrationForm' %}" class="a">Login</a></p>
+</div>
+{%elif userStatus == 0%}
+<div class="userstatus">
+   <p class="p"> Please fill <br>out all<br> the fields</p>
+    <a href="{%url 'ots:registrationForm' %}" class="a">SignUp</a>
+</div>
+{%elif userStatus == 4%}
+<div class="userstatus">
+   <p class="p"> Password does not match</p>
+    <a href="{%url 'ots:registrationForm' %}" class="a">SignUp</a>
+</div>
+
+
+{%endif%}
+{%endblock%}
